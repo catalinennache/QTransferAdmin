@@ -47,7 +47,7 @@ global.sql_connection.connect(function(err) {
   });
   
 
-  var AGC = new AsessionGarbageCollector(0,3,global.sql_connection);
+  var AGC = new AsessionGarbageCollector(2,3,global.sql_connection);
   AGC.onsessiondestroy = (asession_id) => {
     console.log("Emitting agc event");
     ws.send(JSON.stringify({type:'agc',value:asession_id}));

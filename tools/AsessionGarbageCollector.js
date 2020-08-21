@@ -19,6 +19,7 @@
 		
 		connection.connect(async (err)=> {
 			//var max_asession_time = parseInt(process.argv[2]);
+			console.log("Starting AGC Service...");
 			setInterval(()=>{
 				if(!this.stopped){
 					connection.query("select * from asessions",async (err,results)=>{
